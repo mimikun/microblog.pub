@@ -31,12 +31,7 @@ def main() -> None:
         prompt("password: ", is_password=True).encode(), bcrypt.gensalt()
     ).decode()
     dat["name"] = prompt("name (e.g. John Doe): ")
-    dat["summary"] = markdown(
-        prompt(
-            "summary (short description, in markdown, press [ESC] then [ENTER] to submit):\n",
-            multiline=True,
-        )
-    )
+    dat["summary"] = prompt("summary (e.g. Test): ")
     dat["https"] = True
     proto = "https"
     yn = ""
